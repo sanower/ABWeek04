@@ -11,6 +11,10 @@ import { CardComponent } from './shared/component/card/card.component';
 import { BoxListComponent } from './shared/component/box-list/box-list.component';
 import {HttpService, StudentService, TeacherService, UrlService} from './common/services';
 import { HttpClientModule } from '@angular/common/http';
+import { DistrictListComponent } from './pages/district-list/district-list.component';
+import {DistrictService} from './common/services/district.service';
+import { TableComponent } from './shared/component/table/table.component';
+import { BdLocalPipe } from './shared/pipes/bd-local.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
     LandingComponent,
     AboutComponent,
     CardComponent,
-    BoxListComponent
+    BoxListComponent,
+    DistrictListComponent,
+    TableComponent,
+    BdLocalPipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
     ],
 
-  providers: [ HttpService, UrlService, StudentService, TeacherService ],
+  providers: [ HttpService, UrlService, StudentService, TeacherService, DistrictService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
